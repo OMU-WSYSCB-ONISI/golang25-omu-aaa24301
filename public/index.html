@@ -1,1 +1,45 @@
-Sample Test File over Golang http.FileServer
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>動く時計</title>
+    <script>
+        function updateClock() {
+            // 現在時刻を取得
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            // 1桁の場合は0を付ける
+            if (hours < 10) hours = '0' + hours;
+            if (minutes < 10) minutes = '0' + minutes;
+            if (seconds < 10) seconds = '0' + seconds;
+
+            // 時刻を表示
+            var timeString = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('clock').innerHTML = timeString;
+        }
+
+        // 1秒ごとにupdateClock関数を実行
+        setInterval(updateClock, 1000);
+
+        // ページ読み込み時に即座に表示
+        window.onload = updateClock;
+    </script>
+</head>
+<body>
+    <h1>現在時刻</h1>
+    <div id="clock" style="font-size: 64px; font-weight: bold; color: red; border: 2px solid black;">
+        00:00:00
+    </div>
+
+    <img src="ころっけ.jpg"　width="400px" alt="コロッケ">
+    <h1>おすすめの食べ物紹介</h1>
+    <p>お勧めする食べ物はコロッケです</p>
+    <p>コロッケは様々な家庭でも食べられており、なじみ深いものですが、今回特にお勧めしたいのは肉屋で販売されているコロッケです。</p>
+    <p>肉屋で販売されているコロッケは基本的に肉屋で余った部分の肉の有効活用等の側面が強く、普段買わないような値段帯の肉が材料に使われていることもあります。そのため、普段食べているコロッケに比べ美味しいコロッケも散見されます。</p>
+    <p>肉屋のコロッケは値段も安いものが多く、基本的に食べやすいサイズのものが多いので見かけた際には一度買ってみるのをお勧めします。</p>
+    <p><a href="second.html">お勧めの旅行先を紹介しているサイトはこちら</a></p>
+</body>
+</html>
