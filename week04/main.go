@@ -24,8 +24,7 @@ func main() {
 func infohandler(w http.ResponseWriter, r *http.Request) {
 	jst, _ := time.LoadLocation("Asia/Tokyo")
 	var time_result = time.Now().In(jst).Format("2006年01月02日 15:04:05")
-	var h map[string][]string
-	h = r.Header
+	h := r.Header
 	fmt.Fprintln(w, "現在の時刻は", time_result)
 	fmt.Fprintln(w, "利用ブラウザは", h["User-Agent"])
 }
